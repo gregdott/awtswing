@@ -121,7 +121,7 @@ public class GraphicsPanel extends JPanel {
             int xPoly[] = {60,62,67,75,57,40};
             int yPoly[] = {10,12,22,25,37,30};
             Polygon polygon = new Polygon(xPoly, yPoly, xPoly.length);
-            polygon.translate(i*100 + 100, 400);
+            polygon.translate(i*100 + 70, 400);
             polygons.add(polygon);
         }
     }
