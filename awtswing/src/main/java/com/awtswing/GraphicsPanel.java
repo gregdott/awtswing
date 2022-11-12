@@ -50,21 +50,11 @@ class Dragging {
 
 // Should rename more sensibly when this takes shape
 public class GraphicsPanel extends JPanel {
-    
-    //List<Shape> shapes = new ArrayList<Shape>();
-
     List<Ellipse2D.Float> circles = new ArrayList<Ellipse2D.Float>();
     List<Rectangle> rectangles = new ArrayList<Rectangle>();
     List<RoundRectangle2D.Float> roundedRectangles = new ArrayList<RoundRectangle2D.Float>();
     List<Polygon> polygons = new ArrayList<Polygon>();
-
-
     List<Color> colours = new ArrayList<Color>();
-
-    Rectangle hoverVerseBox = new Rectangle(100, 200);
-    boolean showHoverBox = false;
-    int hoverVX, hoverVY;
-    String hoverVerseText = "";
 
     MovementAdapter ma = new MovementAdapter();
 
