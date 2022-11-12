@@ -103,25 +103,26 @@ public class GraphicsPanel extends JPanel {
         //create 10 of each shape...
 
         for (int i = 0; i < 10; i++) {
-            Rectangle rect = new Rectangle(100, 100, 50, 90);
+            Rectangle rect = new Rectangle(i*100 + 100, 100, 50, 90);
             rectangles.add(rect);
         }
 
         for (int i = 0; i < 10; i++) {
-            RoundRectangle2D.Float roundRect = new RoundRectangle2D.Float(200f, 100f, 50f, 90f, 10f, 10f);    
+            RoundRectangle2D.Float roundRect = new RoundRectangle2D.Float(i*100f + 100f, 200f, 50f, 90f, 10f, 10f);    
             roundedRectangles.add(roundRect);
         }
 
         for (int i = 0; i < 10; i++) {
-            Ellipse2D.Float circle = new Ellipse2D.Float(300f, 100f, 100f, 100f);
+            Ellipse2D.Float circle = new Ellipse2D.Float(i*100f + 100f, 300f, 90f, 90f);
             circles.add(circle);
         }
 
         for (int i = 0; i < 10; i++) {
-            int xPoly[] = {600,620,670,750,570,400};
-            int yPoly[] = {100,120,220,250,370,300};
-            Polygon poly = new Polygon(xPoly, yPoly, xPoly.length);
-            polygons.add(poly);
+            int xPoly[] = {60,62,67,75,57,40};
+            int yPoly[] = {10,12,22,25,37,30};
+            Polygon polygon = new Polygon(xPoly, yPoly, xPoly.length);
+            polygon.translate(i*100 + 100, 400);
+            polygons.add(polygon);
         }
     }
 
@@ -132,7 +133,7 @@ public class GraphicsPanel extends JPanel {
     public void paint(Graphics g) {  
         
         super.paint(g);
-
+        colourIndex = 0;
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
@@ -153,8 +154,8 @@ public class GraphicsPanel extends JPanel {
         }
 
         for (int i = 0; i < polygons.size(); i++) {
-            Polygon poly = polygons.get(i);
-            paintShape(g2, poly);
+            Polygon polygon = polygons.get(i);
+            paintShape(g2, polygon);
         }
     }
 
@@ -167,8 +168,9 @@ public class GraphicsPanel extends JPanel {
         g2.fill(shape);
 
         g2.setColor(Color.BLACK);
-        g2.setStroke(new BasicStroke(5));
+        g2.setStroke(new BasicStroke(2));
         g2.draw(shape);
+
         colourIndex++;
     }
 
