@@ -66,20 +66,8 @@ public class GraphicsPanel extends JPanel {
     JTextArea textArea;
     JScrollPane scrollPane;
 
-    /**
-     * Move this to README.md
-     * If the below method along with the lines:
-     * -------------------------------------------------------------
-     * frame.setContentPane(m);
-     * frame.pack();
-     * frame.setMinimumSize(frame.getSize());
-     * -------------------------------------------------------------
-     * are not used, we do not get consistent frame sizes (even if we use something like frame.setSize(1600, 900))
-     * I was going in circles trying to figure out where my calculations with other things were off, but the issue was 
-     * actually that frame.set() was not ensuring that the size was exact for some reason. Did not investigate to find out exactly why though...
-     * Just know that is the case. Or could be. Or was. Bye.
-     */
-    @Override
+    
+    @Override // needed to ensure the display size is correct. See README for futher details
     public Dimension getPreferredSize() {
         return new Dimension(frameWidth, frameHeight);
     }
