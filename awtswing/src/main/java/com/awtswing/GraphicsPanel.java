@@ -6,25 +6,19 @@ import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.awt.RenderingHints;
 import java.awt.Color;
-import java.awt.FontMetrics;
-
-
 import java.awt.BasicStroke;
 import java.awt.Dimension;
-import java.awt.Insets;
-import java.util.*;
-
 import java.awt.Shape;
 import java.awt.Rectangle;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.Polygon;
-
-
-
-
 import java.awt.event.MouseAdapter;  
 import java.awt.event.MouseEvent;
+
+import java.util.List;
+import java.util.ArrayList;
+
 
 /*
  * Author: Gregory Dott
