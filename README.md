@@ -5,9 +5,11 @@ Simple graphic examples with AWT & Swing in Java. I started experimenting with A
 
 - There is an `@override` of the `getPreferredSize()` method in `GraphicsPanel.java`.
 That, in conjunction with 
-```frame.setContentPane(gp); 
+```
+frame.setContentPane(gp); 
 frame.pack();
-frame.setMinimumSize(frame.getSize())```
+frame.setMinimumSize(frame.getSize())
+```
 is used to ensure that the frame gets created with the desired width and height. If we only use `frame.setSize(width, height)` it is possible that the created window will not be exactly those dimensions. There is info in the javadoc about why this is the case.
 
 
