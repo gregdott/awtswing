@@ -1,0 +1,878 @@
+package com.awtswing;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Colours {
+    static List<String> cols = new ArrayList<String>();
+
+    static {
+        cols.add("#5d8aa8");
+        cols.add("#00308f");
+        cols.add("#72a0c1");
+        cols.add("#a32638");
+        cols.add("#f0f8ff");
+        cols.add("#e32636");
+        cols.add("#c46210");
+        cols.add("#efdecd");
+        cols.add("#e52b50");
+        cols.add("#ffbf00");
+        cols.add("#ff7e00");
+        cols.add("#ff033e");
+        cols.add("#96c");
+        cols.add("#a4c639");
+        cols.add("#f2f3f4");
+        cols.add("#cd9575");
+        cols.add("#915c83");
+        cols.add("#841b2d");
+        cols.add("#faebd7");
+        cols.add("#008000");
+        cols.add("#8db600");
+        cols.add("#fbceb1");
+        cols.add("#0ff");
+        cols.add("#7fffd4");
+        cols.add("#4b5320");
+        cols.add("#3b444b");
+        cols.add("#e9d66b");
+        cols.add("#b2beb5");
+        cols.add("#87a96b");
+        cols.add("#f96");
+        cols.add("#a52a2a");
+        cols.add("#fdee00");
+        cols.add("#6e7f80");
+        cols.add("#568203");
+        cols.add("#007fff");
+        cols.add("#f0ffff");
+        cols.add("#89cff0");
+        cols.add("#a1caf1");
+        cols.add("#f4c2c2");
+        cols.add("#21abcd");
+        cols.add("#fae7b5");
+        cols.add("#ffe135");
+        cols.add("#7c0a02");
+        cols.add("#848482");
+        cols.add("#98777b");
+        cols.add("#bcd4e6");
+        cols.add("#9f8170");
+        cols.add("#f5f5dc");
+        cols.add("#9c2542");
+        cols.add("#ffe4c4");
+        cols.add("#3d2b1f");
+        cols.add("#fe6f5e");
+        cols.add("#bf4f51");
+        cols.add("#000");
+        cols.add("#3d0c02");
+        cols.add("#253529");
+        cols.add("#3b3c36");
+        cols.add("#ffebcd");
+        cols.add("#a57164");
+        cols.add("#318ce7");
+        cols.add("#ace5ee");
+        cols.add("#faf0be");
+        cols.add("#00f");
+        cols.add("#a2a2d0");
+        cols.add("#1f75fe");
+        cols.add("#69c");
+        cols.add("#0d98ba");
+        cols.add("#0093af");
+        cols.add("#0087bd");
+        cols.add("#339");
+        cols.add("#0247fe");
+        cols.add("#126180");
+        cols.add("#8a2be2");
+        cols.add("#de5d83");
+        cols.add("#79443b");
+        cols.add("#0095b6");
+        cols.add("#e3dac9");
+        cols.add("#c00");
+        cols.add("#006a4e");
+        cols.add("#873260");
+        cols.add("#0070ff");
+        cols.add("#b5a642");
+        cols.add("#cb4154");
+        cols.add("#1dacd6");
+        cols.add("#6f0");
+        cols.add("#bf94e4");
+        cols.add("#c32148");
+        cols.add("#ff007f");
+        cols.add("#08e8de");
+        cols.add("#d19fe8");
+        cols.add("#f4bbff");
+        cols.add("#ff55a3");
+        cols.add("#fb607f");
+        cols.add("#004225");
+        cols.add("#cd7f32");
+        cols.add("#964b00");
+        cols.add("#a52a2a");
+        cols.add("#ffc1cc");
+        cols.add("#e7feff");
+        cols.add("#f0dc82");
+        cols.add("#480607");
+        cols.add("#800020");
+        cols.add("#deb887");
+        cols.add("#c50");
+        cols.add("#e97451");
+        cols.add("#8a3324");
+        cols.add("#bd33a4");
+        cols.add("#702963");
+        cols.add("#536872");
+        cols.add("#5f9ea0");
+        cols.add("#91a3b0");
+        cols.add("#006b3c");
+        cols.add("#ed872d");
+        cols.add("#e30022");
+        cols.add("#fff600");
+        cols.add("#a67b5b");
+        cols.add("#4b3621");
+        cols.add("#1e4d2b");
+        cols.add("#a3c1ad");
+        cols.add("#c19a6b");
+        cols.add("#efbbcc");
+        cols.add("#78866b");
+
+    }
+}
+/*
+cols.add("#ffef00
+cols.add("#ff0800
+cols.add("#e4717a
+cols.add("#00bfff
+cols.add("#592720
+cols.add("#c41e3a
+cols.add("#0c9
+cols.add("#960018
+cols.add("#d70040
+cols.add("#eb4c42
+cols.add("#ff0038
+cols.add("#ffa6c9
+cols.add("#b31b1b
+cols.add("#99badd
+cols.add("#ed9121
+cols.add("#062a78
+cols.add("#92a1cf
+cols.add("#ace1af
+cols.add("#007ba7
+cols.add("#2f847c
+cols.add("#b2ffff
+cols.add("#4997d0
+cols.add("#de3163
+cols.add("#ec3b83
+cols.add("#007ba7
+cols.add("#2a52be
+cols.add("#6d9bc3
+cols.add("#007aa5
+cols.add("#e03c31
+cols.add("#a0785a
+cols.add("#fad6a5
+cols.add("#36454f
+cols.add("#e68fac
+cols.add("#dfff00
+cols.add("#7fff00
+cols.add("#de3163
+cols.add("#ffb7c5
+cols.add("#cd5c5c
+cols.add("#de6fa1
+cols.add("#a8516e
+cols.add("#aa381e
+cols.add("#7b3f00
+cols.add("#d2691e
+cols.add("#ffa700
+cols.add("#98817b
+cols.add("#e34234
+cols.add("#d2691e
+cols.add("#e4d00a
+cols.add("#fbcce7
+cols.add("#0047ab
+cols.add("#d2691e
+cols.add("#6f4e37
+cols.add("#9bddff
+cols.add("#f88379
+cols.add("#002e63
+cols.add("#8c92ac
+cols.add("#b87333
+cols.add("#da8a67
+cols.add("#ad6f69
+cols.add("#cb6d51
+cols.add("#966
+cols.add("#ff3800
+cols.add("#ff7f50
+cols.add("#f88379
+cols.add("#ff4040
+cols.add("#893f45
+cols.add("#fbec5d
+cols.add("#b31b1b
+cols.add("#6495ed
+cols.add("#fff8dc
+cols.add("#fff8e7
+cols.add("#ffbcd9
+cols.add("#fffdd0
+cols.add("#dc143c
+cols.add("#be0032
+cols.add("#0ff
+cols.add("#00b7eb
+cols.add("#ffff31
+cols.add("#f0e130
+cols.add("#00008b
+cols.add("#654321
+cols.add("#5d3954
+cols.add("#a40000
+cols.add("#08457e
+cols.add("#986960
+cols.add("#cd5b45
+cols.add("#008b8b
+cols.add("#536878
+cols.add("#b8860b
+cols.add("#a9a9a9
+cols.add("#013220
+cols.add("#00416a
+cols.add("#1a2421
+cols.add("#bdb76b
+cols.add("#483c32
+cols.add("#734f96
+cols.add("#8b008b
+cols.add("#036
+cols.add("#556b2f
+cols.add("#ff8c00
+cols.add("#9932cc
+cols.add("#779ecb
+cols.add("#03c03c
+cols.add("#966fd6
+cols.add("#c23b22
+cols.add("#e75480
+cols.add("#039
+cols.add("#872657
+cols.add("#8b0000
+cols.add("#e9967a
+cols.add("#560319
+cols.add("#8fbc8f
+cols.add("#3c1414
+cols.add("#483d8b
+cols.add("#2f4f4f
+cols.add("#177245
+cols.add("#918151
+cols.add("#ffa812
+cols.add("#483c32
+cols.add("#cc4e5c
+cols.add("#00ced1
+cols.add("#9400d3
+cols.add("#9b870c
+cols.add("#00703c
+cols.add("#555
+cols.add("#d70a53
+cols.add("#a9203e
+cols.add("#ef3038
+cols.add("#e9692c
+cols.add("#da3287
+cols.add("#fad6a5
+cols.add("#b94e48
+cols.add("#704241
+cols.add("#c154c1
+cols.add("#004b49
+cols.add("#95b
+cols.add("#c0c
+cols.add("#ffcba4
+cols.add("#ff1493
+cols.add("#843f5b
+cols.add("#f93
+cols.add("#00bfff
+cols.add("#66424d
+cols.add("#1560bd
+cols.add("#c19a6b
+cols.add("#edc9af
+cols.add("#696969
+cols.add("#1e90ff
+cols.add("#d71868
+cols.add("#85bb65
+cols.add("#967117
+cols.add("#00009c
+cols.add("#e1a95f
+cols.add("#555d50
+cols.add("#c2b280
+cols.add("#614051
+cols.add("#f0ead6
+cols.add("#1034a6
+cols.add("#7df9ff
+cols.add("#ff003f
+cols.add("#0ff
+cols.add("#0f0
+cols.add("#6f00ff
+cols.add("#f4bbff
+cols.add("#cf0
+cols.add("#bf00ff
+cols.add("#3f00ff
+cols.add("#8f00ff
+cols.add("#ff0
+cols.add("#50c878
+cols.add("#b48395
+cols.add("#96c8a2
+cols.add("#c19a6b
+cols.add("#801818
+cols.add("#b53389
+cols.add("#f400a1
+cols.add("#e5aa70
+cols.add("#4d5d53
+cols.add("#4f7942
+cols.add("#ff2800
+cols.add("#6c541e
+cols.add("#ce2029
+cols.add("#b22222
+cols.add("#e25822
+cols.add("#fc8eac
+cols.add("#f7e98e
+cols.add("#eedc82
+cols.add("#fffaf0
+cols.add("#ffbf00
+cols.add("#ff1493
+cols.add("#cf0
+cols.add("#ff004f
+cols.add("#014421
+cols.add("#228b22
+cols.add("#a67b5b
+cols.add("#0072bb
+cols.add("#86608e
+cols.add("#cf0
+cols.add("#c72c48
+cols.add("#f64a8a
+cols.add("#f0f
+cols.add("#c154c1
+cols.add("#f7f
+cols.add("#c74375
+cols.add("#e48400
+cols.add("#c66
+cols.add("#dcdcdc
+cols.add("#e49b0f
+cols.add("#f8f8ff
+cols.add("#b06500
+cols.add("#6082b6
+cols.add("#e6e8fa
+cols.add("#d4af37
+cols.add("#ffd700
+cols.add("#996515
+cols.add("#fcc200
+cols.add("#ffdf00
+cols.add("#daa520
+cols.add("#a8e4a0
+cols.add("#808080
+cols.add("#465945
+cols.add("#808080
+cols.add("#bebebe
+cols.add("#0f0
+cols.add("#1cac78
+cols.add("#008000
+cols.add("#00a877
+cols.add("#009f6b
+cols.add("#00a550
+cols.add("#66b032
+cols.add("#adff2f
+cols.add("#a99a86
+cols.add("#00ff7f
+cols.add("#663854
+cols.add("#446ccf
+cols.add("#5218fa
+cols.add("#e9d66b
+cols.add("#3fff00
+cols.add("#c90016
+cols.add("#da9100
+cols.add("#808000
+cols.add("#df73ff
+cols.add("#f400a1
+cols.add("#f0fff0
+cols.add("#007fbf
+cols.add("#49796b
+cols.add("#ff1dce
+cols.add("#ff69b4
+cols.add("#355e3b
+cols.add("#71a6d2
+cols.add("#fcf75e
+cols.add("#002395
+cols.add("#b2ec5d
+cols.add("#138808
+cols.add("#cd5c5c
+cols.add("#e3a857
+cols.add("#6f00ff
+cols.add("#00416a
+cols.add("#4b0082
+cols.add("#002fa7
+cols.add("#ff4f00
+cols.add("#ba160c
+cols.add("#c0362c
+cols.add("#5a4fcf
+cols.add("#f4f0ec
+cols.add("#009000
+cols.add("#fffff0
+cols.add("#00a86b
+cols.add("#f8de7e
+cols.add("#d73b3e
+cols.add("#a50b5e
+cols.add("#343434
+cols.add("#fada5e
+cols.add("#bdda57
+cols.add("#29ab87
+cols.add("#4cbb17
+cols.add("#7c1c05
+cols.add("#c3b091
+cols.add("#f0e68c
+cols.add("#e8000d
+cols.add("#087830
+cols.add("#d6cadd
+cols.add("#26619c
+cols.add("#fefe22
+cols.add("#a9ba9d
+cols.add("#cf1020
+cols.add("#ccf
+cols.add("#fff0f5
+cols.add("#b57edc
+cols.add("#c4c3d0
+cols.add("#9457eb
+cols.add("#ee82ee
+cols.add("#e6e6fa
+cols.add("#fbaed2
+cols.add("#967bb6
+cols.add("#fba0e3
+cols.add("#e6e6fa
+cols.add("#7cfc00
+cols.add("#fff700
+cols.add("#fffacd
+cols.add("#e3ff00
+cols.add("#1a1110
+cols.add("#fdd5b1
+cols.add("#add8e6
+cols.add("#b5651d
+cols.add("#e66771
+cols.add("#f08080
+cols.add("#93ccea
+cols.add("#f56991
+cols.add("#e0ffff
+cols.add("#f984ef
+cols.add("#fafad2
+cols.add("#d3d3d3
+cols.add("#90ee90
+cols.add("#f0e68c
+cols.add("#b19cd9
+cols.add("#ffb6c1
+cols.add("#e97451
+cols.add("#ffa07a
+cols.add("#f99
+cols.add("#20b2aa
+cols.add("#87cefa
+cols.add("#789
+cols.add("#b38b6d
+cols.add("#e68fac
+cols.add("#ffffe0
+cols.add("#c8a2c8
+cols.add("#bfff00
+cols.add("#32cd32
+cols.add("#0f0
+cols.add("#9dc209
+cols.add("#195905
+cols.add("#faf0e6
+cols.add("#c19a6b
+cols.add("#6ca0dc
+cols.add("#534b4f
+cols.add("#e62020
+cols.add("#f0f
+cols.add("#ca1f7b
+cols.add("#ff0090
+cols.add("#aaf0d1
+cols.add("#f8f4ff
+cols.add("#c04000
+cols.add("#fbec5d
+cols.add("#6050dc
+cols.add("#0bda51
+cols.add("#979aaa
+cols.add("#ff8243
+cols.add("#74c365
+cols.add("#880085
+cols.add("#c32148
+cols.add("#800000
+cols.add("#b03060
+cols.add("#e0b0ff
+cols.add("#915f6d
+cols.add("#ef98aa
+cols.add("#73c2fb
+cols.add("#e5b73b
+cols.add("#6da
+cols.add("#0000cd
+cols.add("#e2062c
+cols.add("#af4035
+cols.add("#f3e5ab
+cols.add("#035096
+cols.add("#1c352d
+cols.add("#dda0dd
+cols.add("#ba55d3
+cols.add("#0067a5
+cols.add("#9370db
+cols.add("#bb3385
+cols.add("#aa4069
+cols.add("#3cb371
+cols.add("#7b68ee
+cols.add("#c9dc87
+cols.add("#00fa9a
+cols.add("#674c47
+cols.add("#48d1cc
+cols.add("#79443b
+cols.add("#d9603b
+cols.add("#c71585
+cols.add("#f8b878
+cols.add("#f8de7e
+cols.add("#fdbcb4
+cols.add("#191970
+cols.add("#004953
+cols.add("#ffc40c
+cols.add("#3eb489
+cols.add("#f5fffa
+cols.add("#98ff98
+cols.add("#ffe4e1
+cols.add("#faebd7
+cols.add("#967117
+cols.add("#73a9c2
+cols.add("#ae0c00
+cols.add("#addfad
+cols.add("#30ba8f
+cols.add("#997a8d
+cols.add("#18453b
+cols.add("#c54b8c
+cols.add("#ffdb58
+cols.add("#21421e
+cols.add("#f6adc6
+cols.add("#2a8000
+cols.add("#fada5e
+cols.add("#ffdead
+cols.add("#000080
+cols.add("#ffa343
+cols.add("#fe4164
+cols.add("#39ff14
+cols.add("#d7837f
+cols.add("#a4dded
+cols.add("#059033
+cols.add("#0077be
+cols.add("#c72
+cols.add("#008000
+cols.add("#cfb53b
+cols.add("#fdf5e6
+cols.add("#796878
+cols.add("#673147
+cols.add("#c08081
+cols.add("#808000
+cols.add("#3c341f
+cols.add("#6b8e23
+cols.add("#9ab973
+cols.add("#353839
+cols.add("#b784a7
+cols.add("#ff7f00
+cols.add("#ff9f00
+cols.add("#ff4500
+cols.add("#fb9902
+cols.add("#ffa500
+cols.add("#da70d6
+cols.add("#654321
+cols.add("#900
+cols.add("#414a4c
+cols.add("#ff6e4a
+cols.add("#002147
+cols.add("#060
+cols.add("#273be2
+cols.add("#682860
+cols.add("#bcd4e6
+cols.add("#afeeee
+cols.add("#987654
+cols.add("#af4035
+cols.add("#9bc4e2
+cols.add("#ddadaf
+cols.add("#da8a67
+cols.add("#abcdef
+cols.add("#e6be8a
+cols.add("#eee8aa
+cols.add("#98fb98
+cols.add("#dcd0ff
+cols.add("#f984e5
+cols.add("#fadadd
+cols.add("#dda0dd
+cols.add("#db7093
+cols.add("#96ded1
+cols.add("#c9c0bb
+cols.add("#ecebbd
+cols.add("#bc987e
+cols.add("#db7093
+cols.add("#78184a
+cols.add("#ffefd5
+cols.add("#50c878
+cols.add("#aec6cf
+cols.add("#836953
+cols.add("#cfcfc4
+cols.add("#7d7
+cols.add("#f49ac2
+cols.add("#ffb347
+cols.add("#dea5a4
+cols.add("#b39eb5
+cols.add("#ff6961
+cols.add("#cb99c9
+cols.add("#fdfd96
+cols.add("#800080
+cols.add("#536878
+cols.add("#ffe5b4
+cols.add("#ffcba4
+cols.add("#fc9
+cols.add("#ffdab9
+cols.add("#fadfad
+cols.add("#d1e231
+cols.add("#eae0c8
+cols.add("#88d8c0
+cols.add("#b768a2
+cols.add("#e6e200
+cols.add("#ccf
+cols.add("#1c39bb
+cols.add("#00a693
+cols.add("#32127a
+cols.add("#d99058
+cols.add("#f77fbe
+cols.add("#701c1c
+cols.add("#c33
+cols.add("#fe28a2
+cols.add("#ec5800
+cols.add("#cd853f
+cols.add("#df00ff
+cols.add("#000f89
+cols.add("#123524
+cols.add("#fddde6
+cols.add("#01796f
+cols.add("#ffc0cb
+cols.add("#ffddf4
+cols.add("#f96
+cols.add("#e7accf
+cols.add("#f78fa7
+cols.add("#93c572
+cols.add("#e5e4e2
+cols.add("#8e4585
+cols.add("#dda0dd
+cols.add("#ff5a36
+cols.add("#b0e0e6
+cols.add("#ff8f00
+cols.add("#701c1c
+cols.add("#003153
+cols.add("#df00ff
+cols.add("#c89
+cols.add("#ff7518
+cols.add("#69359c
+cols.add("#800080
+cols.add("#9678b6
+cols.add("#9f00c5
+cols.add("#fe4eda
+cols.add("#50404d
+cols.add("#a020f0
+cols.add("#51484f
+cols.add("#5d8aa8
+cols.add("#ff355e
+cols.add("#fbab60
+cols.add("#e30b5d
+cols.add("#915f6d
+cols.add("#e25098
+cols.add("#b3446c
+cols.add("#826644
+cols.add("#f3c
+cols.add("#e3256b
+cols.add("#f00
+cols.add("#a52a2a
+cols.add("#860111
+cols.add("#f2003c
+cols.add("#c40233
+cols.add("#ff5349
+cols.add("#ed1c24
+cols.add("#fe2712
+cols.add("#c71585
+cols.add("#ab4e52
+cols.add("#522d80
+cols.add("#002387
+cols.add("#004040
+cols.add("#f1a7fe
+cols.add("#d70040
+cols.add("#0892d0
+cols.add("#a76bcf
+cols.add("#b666d2
+cols.add("#b03060
+cols.add("#414833
+cols.add("#0cc
+cols.add("#ff007f
+cols.add("#f9429e
+cols.add("#674846
+cols.add("#b76e79
+cols.add("#e32636
+cols.add("#f6c
+cols.add("#aa98a9
+cols.add("#905d5d
+cols.add("#ab4e52
+cols.add("#65000b
+cols.add("#d40000
+cols.add("#bc8f8f
+cols.add("#0038a8
+cols.add("#002366
+cols.add("#4169e1
+cols.add("#ca2c92
+cols.add("#7851a9
+cols.add("#fada5e
+cols.add("#d10056
+cols.add("#e0115f
+cols.add("#9b111e
+cols.add("#ff0028
+cols.add("#bb6528
+cols.add("#e18e96
+cols.add("#a81c07
+cols.add("#80461b
+cols.add("#b7410e
+cols.add("#da2c43
+cols.add("#00563f
+cols.add("#8b4513
+cols.add("#ff6700
+cols.add("#f4c430
+cols.add("#ff8c69
+cols.add("#ff91a4
+cols.add("#c2b280
+cols.add("#967117
+cols.add("#ecd540
+cols.add("#f4a460
+cols.add("#967117
+cols.add("#92000a
+cols.add("#507d2a
+cols.add("#0f52ba
+cols.add("#0067a5
+cols.add("#cba135
+cols.add("#ff2400
+cols.add("#fd0e35
+cols.add("#ffd800
+cols.add("#76ff7a
+cols.add("#006994
+cols.add("#2e8b57
+cols.add("#321414
+cols.add("#fff5ee
+cols.add("#ffba00
+cols.add("#704214
+cols.add("#8a795d
+cols.add("#009e60
+cols.add("#fc0fc0
+cols.add("#ff6fff
+cols.add("#882d17
+cols.add("#c0c0c0
+cols.add("#cb410b
+cols.add("#007474
+cols.add("#87ceeb
+cols.add("#cf71af
+cols.add("#6a5acd
+cols.add("#708090
+cols.add("#039
+cols.add("#933d41
+cols.add("#100c08
+cols.add("#fffafa
+cols.add("#0fc0fc
+cols.add("#a7fc00
+cols.add("#00ff7f
+cols.add("#23297a
+cols.add("#4682b4
+cols.add("#fada5e
+cols.add("#900
+cols.add("#4f666a
+cols.add("#e4d96f
+cols.add("#fc3
+cols.add("#fad6a5
+cols.add("#d2b48c
+cols.add("#f94d00
+cols.add("#f28500
+cols.add("#fc0
+cols.add("#e4717a
+cols.add("#483c32
+cols.add("#8b8589
+cols.add("#d0f0c0
+cols.add("#f88379
+cols.add("#f4c2c2
+cols.add("#008080
+cols.add("#367588
+cols.add("#00827f
+cols.add("#cf3476
+cols.add("#cd5700
+cols.add("#e2725b
+cols.add("#d8bfd8
+cols.add("#de6fa1
+cols.add("#fc89ac
+cols.add("#0abab5
+cols.add("#e08d3c
+cols.add("#dbd7d2
+cols.add("#eee600
+cols.add("#ff6347
+cols.add("#746cc0
+cols.add("#ffc87c
+cols.add("#fd0e35
+cols.add("#808080
+cols.add("#00755e
+cols.add("#0073cf
+cols.add("#417dc1
+cols.add("#deaa88
+cols.add("#b57281
+cols.add("#30d5c8
+cols.add("#00ffef
+cols.add("#a0d6b4
+cols.add("#7c4848
+cols.add("#8a496b
+cols.add("#66023c
+cols.add("#03a
+cols.add("#d9004c
+cols.add("#8878c3
+cols.add("#536895
+cols.add("#ffb300
+cols.add("#3cd070
+cols.add("#ff6fff
+cols.add("#120a8f
+cols.add("#4166f5
+cols.add("#635147
+cols.add("#ffddca
+cols.add("#5b92e5
+cols.add("#b78727
+cols.add("#ff6
+cols.add("#014421
+cols.add("#7b1113
+cols.add("#ae2029
+cols.add("#e1ad21
+cols.add("#004f98
+cols.add("#900
+cols.add("#fc0
+cols.add("#d3003f
+cols.add("#f3e5ab
+cols.add("#c5b358
+cols.add("#c80815
+cols.add("#43b3ae
+cols.add("#e34234
+cols.add("#d9603b
+cols.add("#a020f0
+cols.add("#8f00ff
+cols.add("#324ab2
+cols.add("#7f00ff
+cols.add("#8601af
+cols.add("#ee82ee
+cols.add("#40826d
+cols.add("#922724
+cols.add("#9f1d35
+cols.add("#da1d81
+cols.add("#ffa089
+cols.add("#9f00ff
+cols.add("#004242
+cols.add("#a4f4f9
+cols.add("#645452
+cols.add("#f5deb3
+cols.add("#fff
+cols.add("#f5f5f5
+cols.add("#a2add0
+cols.add("#ff43a4
+cols.add("#fc6c85
+cols.add("#722f37
+cols.add("#673147
+cols.add("#c9a0dc
+cols.add("#c19a6b
+cols.add("#738678
+cols.add("#0f4d92
+cols.add("#ff0
+cols.add("#9acd32
+cols.add("#efcc00
+cols.add("#ffd300
+cols.add("#ffae42
+cols.add("#ffef00
+cols.add("#fefe33
+cols.add("#0014a8
+cols.add("#2c1608*/
