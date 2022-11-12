@@ -31,23 +31,6 @@ import java.util.ArrayList;
  * 
  */
 
-class Dragging {
-    String arr;
-    int index;
-
-    public Dragging(String arr, int index) {
-        this.arr = arr;
-        this.index = index;
-    }
-
-    public void update(String arr, int index) {
-        this.arr = arr;
-        this.index = index;
-    }
-}
-
-
-
 // Should rename more sensibly when this takes shape
 public class GraphicsPanel extends JPanel {
     List<Ellipse2D.Float> circles = new ArrayList<Ellipse2D.Float>();
@@ -86,21 +69,18 @@ public class GraphicsPanel extends JPanel {
     }
 
     public GraphicsPanel() {
-        initShapeColours();
-        initShapes();
-        addMouseMotionListener(ma);
-        addMouseListener(ma);
+        initShapeColours();         // initialise colours List
+        initShapes();               // initialise the Lists of different shapes
+        addMouseMotionListener(ma); // for mouse movement events
+        addMouseListener(ma);       // for mouse click events
     }
 
-    private void initShapeColours() {
-        for (int i = 0; i < Colours.cols.size(); i++) {
-            colours.add(Color.decode(Colours.cols.get(i)));
-        }
-    }
-
+    /**
+     * Create the basic shape objects we want to display and store them in arrays
+     */
     private void initShapes() {
 
-        //create 10 of each shape...
+        // create 10 of each shape and add each shape to its respective List...
 
         for (int i = 0; i < 10; i++) {
             Rectangle rect = new Rectangle(i*100 + 100, 100, 50, 90);
@@ -118,10 +98,17 @@ public class GraphicsPanel extends JPanel {
         }
 
         for (int i = 0; i < 10; i++) {
+            /*
+             * For polygons, due to how their shape is described, we can not set separate initial location coordinates aside
+             * from how we describe the points in the 2d plane that make up the polygon. So when we describe the shape
+             * of a polygon, it is necessarily at a particular position defined by the points making it up. 
+             * 
+             * So if you want to create a polygon and place it somewhere, you must do a translate like below.
+             */
             int xPoly[] = {60,62,67,75,57,40};
             int yPoly[] = {10,12,22,25,37,30};
-            Polygon polygon = new Polygon(xPoly, yPoly, xPoly.length);
-            polygon.translate(i*100 + 70, 400);
+            Polygon polygon = new Polygon(xPoly, yPoly, xPoly.length);            
+            polygon.translate(i*100 + 70, 400); // put it where we want it
             polygons.add(polygon);
         }
     }
@@ -135,9 +122,13 @@ public class GraphicsPanel extends JPanel {
         super.paint(g);
         colourIndex = 0;
         Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); // make things smooooooth
+        // g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); // make things smooooooth (don't have text here yet so this is not currently needed)
 
+        /*
+         * We loop through each array of shapes below. Shapes can have had their position changed due to 
+         * clicking and dragging on the shape, which then triggers a repaint.
+         */
         for (int i = 0; i < rectangles.size(); i++) {
             Rectangle rect = rectangles.get(i);
             paintShape(g2, rect);
@@ -159,26 +150,67 @@ public class GraphicsPanel extends JPanel {
         }
     }
 
+    /**
+     * paintShape - given a Shape object and a Graphics2D object, paint the shape...
+     * 
+     * @param g2 Graphics2D object cast from Graphics object passed to paint() method
+     * @param shape Shape object to be painted. Children of Shape (eg. Rectangle) are what get passed, so this paints various shapes.
+     */
     private void paintShape(Graphics2D g2, Shape shape) {
         if (colourIndex > 120) {
             colourIndex = 0;
         }
         
         g2.setColor(colours.get(colourIndex));
-        g2.fill(shape);
+        g2.fill(shape); // fills the shape defined by the Shape object with colour
 
         g2.setColor(Color.BLACK);
         g2.setStroke(new BasicStroke(2));
-        g2.draw(shape);
+        g2.draw(shape); // draws a line around the shape. remove this to remove the shape's borders
 
         colourIndex++;
     }
 
+    // read hex colour values from Colours.java and create Color objects
+    private void initShapeColours() {
+        for (int i = 0; i < Colours.cols.size(); i++) {
+            colours.add(Color.decode(Colours.cols.get(i)));
+        }
+    }
+
+
+    /*
+     * To keep track of which shape is being dragged, we create a simple object that stores
+     * the array the object being dragged belongs to, along with its index in that array.
+     * 
+     * If we don't keep track of this, we have a rather annoying effect take place where shapes start to 
+     * stick together if you drag one shape past another. This is facilitated by how the detection of which
+     * shape to move is done below. So this is really just to stop that weird effect from happening and make
+     * sure that only one shape is dragged at a time.
+     */
+    class Dragging {
+        String arr;
+        int index;
+    
+        public Dragging(String arr, int index) {
+            this.arr = arr;
+            this.index = index;
+        }
+    
+        public void update(String arr, int index) {
+            this.arr = arr;
+            this.index = index;
+        }
+    }
+
+    /*
+     * This is what we use for registering mouse events and doing things
+     */
     class MovementAdapter extends MouseAdapter {
 
         private int x;
         private int y;
-        private Dragging drg = new Dragging("", -1);
+        private Dragging drg = new Dragging("", -1); // used for keeping track of which shape is being dragged
 
         public void mousePressed(MouseEvent e) {
             x = e.getX();
@@ -186,11 +218,11 @@ public class GraphicsPanel extends JPanel {
         }
 
         public void mouseReleased(MouseEvent e) {
+            // reset the drg object (essentially saying: "Nothing is currently being dragged")
             drg.update("", -1);
         }
 
         public void mouseDragged(MouseEvent e) {
-
             int dx = e.getX() - x;
             int dy = e.getY() - y;
 
@@ -198,12 +230,14 @@ public class GraphicsPanel extends JPanel {
              * Due to the Shape Object (parent object of all the shapes below) not having a method getBounds2D,
              * we can't just store all our shapes in a single List<Shape> and call getBounds2D. This results in 
              * quite a bit of redundancy in the code below. Need to see if there is a way to make this nicer.
+             * 
+             * To be 100% clear I don't like the redundancy below. I'm sure there must be a better way to do this.
              */
             
             // Check if we are moving a rectangle
             for (int i = 0; i < rectangles.size(); i++) {
                 Rectangle rect = rectangles.get(i);
-
+                // If (x, y) is within the bounds of the shape and we are not currently dragging anything, or we are dragging this particular shape
                 if (rect.getBounds2D().contains(x, y) && ((drg.index == -1) || (drg.index == i && drg.arr == "rectangles"))) {
                     drg.index = i;
                     drg.arr = "rectangles";
@@ -216,7 +250,7 @@ public class GraphicsPanel extends JPanel {
             // Check if we are moving a rounded rectangle
             for (int i = 0; i < roundedRectangles.size(); i++) {
                 RoundRectangle2D.Float roundRect = roundedRectangles.get(i);
-
+                // If (x, y) is within the bounds of the shape and we are not currently dragging anything, or we are dragging this particular shape
                 if (roundRect.getBounds2D().contains(x, y) && ((drg.index == -1) || (drg.index == i && drg.arr == "roundedRectangles"))) {
                     drg.index = i;
                     drg.arr = "roundedRectangles";
@@ -229,7 +263,7 @@ public class GraphicsPanel extends JPanel {
             // Check if we are moving a circle
             for (int i = 0; i < circles.size(); i++) {
                 Ellipse2D.Float circle = circles.get(i);
-
+                // If (x, y) is within the bounds of the shape and we are not currently dragging anything, or we are dragging this particular shape
                 if (circle.getBounds2D().contains(x, y) && ((drg.index == -1) || (drg.index == i && drg.arr == "circles"))) {
                     drg.index = i;
                     drg.arr = "circles";
@@ -242,7 +276,7 @@ public class GraphicsPanel extends JPanel {
             // Check if we are moving a polygon
             for (int i = 0; i < polygons.size(); i++) {
                 Polygon polygon = polygons.get(i);
-
+                // If (x, y) is within the bounds of the shape and we are not currently dragging anything, or we are dragging this particular shape
                 if (polygon.getBounds2D().contains(x, y) && ((drg.index == -1) || (drg.index == i && drg.arr == "polygons"))) {
                     drg.index = i;
                     drg.arr = "polygons";
