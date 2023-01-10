@@ -1,5 +1,5 @@
 # awtswing
-Simple graphic examples with AWT & Swing in Java. I started experimenting with AWT and Swing for drawing graphs in my other project [BibleLoops](https://github.com/gregdott/bibleloops). There were a few things that I had to figure out in conjunction to get things working the way that I wanted. This repo is a distillation of what I learned from that process.
+Simple graphic examples with AWT & Swing in Java. I started experimenting with AWT and Swing for drawing graphs in the first iteration of another project. There were a few things that I had to figure out in conjunction to get things working the way that I wanted. This repo is a distillation of what I learned from that process.
 
 ## Notes:
 
